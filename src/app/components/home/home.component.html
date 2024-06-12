@@ -1,0 +1,35 @@
+<h1>Regitsration Form</h1>
+<form [formGroup]="reg" (ngSubmit)="onSubmit()">
+    <div class="">
+        <label for="id">Id:  </label>
+        <input type="number" formControlName="id"><br><br>
+        <label for="name"> Name:  </label>
+        <input type="text" formControlName="name"><br><br>
+        <label for="email"> Eamil:  </label>
+        <input type="email" formControlName="email"><br><br>
+        <button type="submit">REgistration</button>
+    </div>
+</form>
+
+
+<h1>Template Driven form</h1>
+<form (ngSubmit)="onSubmitForm(regForm)" #regForm="ngForm"> 
+    <div class="container">
+        <label for="name"> Name:  </label>
+        <input type="text" name="name" ngModel>
+        <br><br>
+        <label for="email"> Email:  </label>
+        <input type="email" name="email" ngModel>
+        <br><br>
+        <label for="no"> Mobile No:  </label>
+        <input type="number" name="Number" ngModel>
+        <br><br>
+        <label for="file">Resume File: </label>
+        <input type="file" name="resume" (change)="onFileSelected($event)" ngModel>
+        <br><br>
+        <button type="submit">Register</button>
+</div>
+</form>
+   
+
+
